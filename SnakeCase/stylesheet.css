@@ -1,0 +1,33 @@
+
+#container {
+  display: block;
+  height: 250px;
+  width: 250px;
+  border: 2px solid black;
+  border-width: 4px;
+  margin: auto;
+}
+
+.game {
+  float: left;
+  display: block;
+  margin: auto;
+  height: 10px;
+  width: 10px;
+  background-color: #157DEC;
+}
+.apple{
+  background-color: #E41B17;
+}
+.snake{
+  background-color: #54C571;
+}
+#score{
+  text-align: center;
+  font-family: monospace;
+
+}
+#snake{
+  text-align: center;
+  font-family: sans-serif;
+}
