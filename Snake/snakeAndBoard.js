@@ -157,7 +157,7 @@ Board.prototype.start = function(snake) {
 Board.prototype.gameover = function() {
   clearInterval(this.gameSession);
   $('#container').fadeTo('slow', 0.5);
-  $('#score').html('You lost... Score: ' + this.score);
+  $('#score').html('You lost... Score: ' + this.score).css('font-family', 'sans-serif');
 };
 
 Board.prototype.gameLoop = function(snake) {
@@ -188,5 +188,5 @@ Board.prototype.draw = function(snake) {
   var appl = this.apple
   $('#\\[' + appl[0] + '\\,' + appl[1] + '\\]').addClass('apple');
 
-   $('#score').html("Score:  " + that.score);
+   $('#score').html("Score:  " + that.score).css('font-family', 'sans-serif');
 };
