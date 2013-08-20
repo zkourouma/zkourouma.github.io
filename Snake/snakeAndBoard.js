@@ -69,6 +69,7 @@ Snake.prototype.grow = function() {
 function Board(size){
   this.size = size;
   this.apple = [Math.floor(Math.random() * size), Math.floor(Math.random() * size)];
+  this.gameSession = undefined;
   
   this.body = function(){
     var arr = [];
@@ -92,11 +93,15 @@ Board.prototype.step = function(snake, timer) {
   snake.step();
   if (!this.checkForWall(snake)){
     window.clearInterval(that.timer);
-    alert("Sorry, you lose. Your score: " + that.score);
+    that.gameover();
+    clearInterval(thisGame);
+    return;
   }
   if (snake.body.length > 1 && this.checkForSelf(snake)){
    window.clearInterval(that.timer);
-   alert("Sorry, you lose. Your score: " + that.score);
+   that.gameover();
+   clearInterval(thisGame);
+   return;
   }
   if (this.checkForApple(snake)){
     snake.grow();
@@ -121,6 +126,16 @@ Board.prototype.checkForSelf = function(snake) {
   return hit
 };
 
+Board.prototype.pauseToggle = function(snake) {
+  if (this.gameSession !== undefined){
+    clearInterval(this.gameSession);
+    this.gameSession = undefined;
+  }
+  else{
+    this.gameSession = this.gameLoop(snake);
+  }
+};
+
 Board.prototype.checkForApple = function(snake) {
   return (snake.body[0][0] == this.apple[0] && snake.body[0][1] == this.apple[1])
 };
@@ -136,12 +151,28 @@ Board.prototype.newApple = function(snake) {
 };
 
 Board.prototype.start = function(snake) {
+  this.gameSession = this.gameLoop(snake);
+};
+
+Board.prototype.gameover = function() {
+  clearInterval(this.gameSession);
+  $('#container').fadeTo('slow', 0.5);
+  $('#score').html('You lost... Score: ' + this.score);
+};
+
+Board.prototype.gameLoop = function(snake) {
   var that = this;
 
-  this.timer = window.setInterval(function(){
-      that.draw(snake);
-      that.step(snake);
-    }, 100);
+  STEP_TIME_MILLIS = 100;
+
+  var thisGame = window.setInterval(function(){
+    that.draw(snake);
+    that.step(snake);
+    }, 
+  
+    STEP_TIME_MILLIS);
+  
+  return thisGame;
 };
 
 Board.prototype.draw = function(snake) {

@@ -28,6 +28,9 @@ $(function () {
       case 39:
         snake.turn('east')
         break;
+      case 32:
+        game.pauseToggle(snake);
+        break;
       default: 
     }
   });
