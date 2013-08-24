@@ -46,14 +46,6 @@ a small {
   display:block;
 }
 
-/*.projectlist ul li ul{
-  display: none;
-}
-
-.projectlist ul li:hover ul{
-  display: block;
-}*/
-
 .wrapper {
   width:860px;
   margin:0 auto;
