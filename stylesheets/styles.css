@@ -3,8 +3,9 @@
 body {
   padding:50px;
   font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#777;
+  color: black;
   font-weight:300;
+  background: #ccc;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -44,6 +45,14 @@ a small {
   margin-top:-0.6em;
   display:block;
 }
+
+/*.projectlist ul li ul{
+  display: none;
+}
+
+.projectlist ul li:hover ul{
+  display: block;
+}*/
 
 .wrapper {
   width:860px;
@@ -162,11 +171,30 @@ header ul a strong {
 section {
   width:500px;
   float:right;
-  padding-bottom:50px;
+  padding: 30px 20px;
+  background: rgba(154, 183, 255, 1);
+  border-radius: 10px;
+  margin-bottom: 50px;
 }
 
 section ul {
   list-style: none;
+}
+
+section ul li ul{
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+section li{
+  color: black;
+}
+
+section a {
+  color: white;
+}
+section a strong{
+  color: white;
 }
 
 small {
