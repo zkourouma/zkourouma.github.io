@@ -6,8 +6,8 @@ body{
 
 #container {
   display: block;
-  height: 250px;
-  width: 250px;
+  height: 500px;
+  width: 500px;
   border: 2px solid black;
   border-width: 3px;
   margin: auto;

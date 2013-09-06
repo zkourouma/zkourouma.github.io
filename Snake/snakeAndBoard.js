@@ -3,7 +3,7 @@ function Snake(boardSize){
   this.body = [[Math.floor(boardSize/2), Math.floor(boardSize/2)]];
   this.direction = {
     x: 0,
-    y: 1
+    y: 0
   };
 };
 
@@ -163,7 +163,7 @@ Board.prototype.gameover = function() {
 Board.prototype.gameLoop = function(snake) {
   var that = this;
 
-  STEP_TIME_MILLIS = 100;
+  STEP_TIME_MILLIS = 60;
 
   var thisGame = window.setInterval(function(){
     that.draw(snake);

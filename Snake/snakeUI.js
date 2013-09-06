@@ -1,5 +1,5 @@
 $(function () {
- var game = new Board(25);
+ var game = new Board(50);
  var snake = new Snake(game.size);
  
  $('body').append("<div id='container'>");

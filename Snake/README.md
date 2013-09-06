@@ -14,6 +14,5 @@ Use the arrows to turn and the space bar to pause.
 
 ### TODO
 
-* Pause/restart functionality
 * Persistent high-score records
 * Prettify
