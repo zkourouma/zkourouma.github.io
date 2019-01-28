@@ -1,0 +1,8 @@
+title: Zkourouma.github.io
+description: Software engineer from New York City
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-minimal
+
+gems:
+  - jekyll-mentions
